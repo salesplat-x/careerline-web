@@ -33,6 +33,7 @@ The following commit types are allowed:
 ### Examples
 
 ✅ **Valid commit messages:**
+
 ```
 feat: add user authentication
 fix: resolve login button crash
@@ -42,6 +43,7 @@ style: format code with prettier
 ```
 
 ❌ **Invalid commit messages:**
+
 ```
 Added new feature          # Missing type
 feat add user auth         # Missing colon
