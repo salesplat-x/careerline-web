@@ -21,29 +21,29 @@ const compat = new FlatCompat({
 });
 
 // Shim for airbnb-typescript compatibility with typescript-eslint v8
-if (tseslint.plugin.rules && !tseslint.plugin.rules['lines-between-class-members']) {
-  tseslint.plugin.rules['lines-between-class-members'] = {
-    meta: {
-      type: 'layout',
-      docs: { description: 'shimmed' },
-      schema: [{ enum: ['always', 'never'] }, { type: 'object', additionalProperties: true }],
-    },
-    create: (context) => ({}),
-  };
-}
+// if (tseslint.plugin.rules && !tseslint.plugin.rules['lines-between-class-members']) {
+//   tseslint.plugin.rules['lines-between-class-members'] = {
+//     meta: {
+//       type: 'layout',
+//       docs: { description: 'shimmed' },
+//       schema: [{ enum: ['always', 'never'] }, { type: 'object', additionalProperties: true }],
+//     },
+//     create: (context) => ({}),
+//   };
+// }
 
-if (tseslint.plugin.rules && !tseslint.plugin.rules['no-throw-literal']) {
-  tseslint.plugin.rules['no-throw-literal'] = {
-    meta: {
-      docs: { description: 'shimmed' },
-      schema: false, // Accept anything
-    },
-    create: (context) => ({}),
-  };
-}
-if (tseslint.plugin.rules && !tseslint.plugin.rules['imports-first']) {
-  // sometimes airbnb-typescript or others reference this? No, imports-first is eslint-plugin-import.
-}
+// if (tseslint.plugin.rules && !tseslint.plugin.rules['no-throw-literal']) {
+//   tseslint.plugin.rules['no-throw-literal'] = {
+//     meta: {
+//       docs: { description: 'shimmed' },
+//       schema: false, // Accept anything
+//     },
+//     create: (context) => ({}),
+//   };
+// }
+// if (tseslint.plugin.rules && !tseslint.plugin.rules['imports-first']) {
+//   // sometimes airbnb-typescript or others reference this? No, imports-first is eslint-plugin-import.
+// }
 
 export default tseslint.config(
   // Ignore files
@@ -55,8 +55,8 @@ export default tseslint.config(
   js.configs.recommended,
 
   // Airbnb + Airbnb TypeScript (via compat)
-  ...compat.extends('airbnb'),
-  ...compat.extends('airbnb-typescript'),
+  // ...compat.extends('airbnb'),
+  // ...compat.extends('airbnb-typescript'),
 
   // TypeScript ESLint recommended
   ...tseslint.configs.recommended,
@@ -78,6 +78,7 @@ export default tseslint.config(
       },
     },
     plugins: {
+      react: reactPlugin,
       'react-refresh': reactRefresh,
       'unused-imports': unusedImports,
     },
