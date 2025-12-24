@@ -1,0 +1,157 @@
+@use '../../styles/palette.scss' as *;
+@use '../../styles/mixins.scss' as *;
+
+// ============================================
+// Text Component Styles
+// ============================================
+
+.text-component {
+  margin: 0;
+  padding: 0;
+  font-family: $font-family-base;
+  line-height: $line-height-normal;
+  transition: color $transition-fast;
+}
+
+// ============================================
+// Text Variants
+// ============================================
+
+// Small Text
+.text-small {
+  font-size: $font-size-xs;
+  line-height: $line-height-normal;
+
+  @include respond-to(md) {
+    font-size: $font-size-sm;
+  }
+}
+
+// Body Text
+.text-body {
+  line-height: $line-height-normal;
+
+  &.text-body-sm {
+    font-size: $font-size-sm;
+
+    @include respond-to(md) {
+      font-size: $font-size-base;
+    }
+  }
+
+  &.text-body-base {
+    font-size: $font-size-base;
+
+    @include respond-to(md) {
+      font-size: $font-size-lg;
+    }
+  }
+
+  &.text-body-lg {
+    font-size: $font-size-lg;
+
+    @include respond-to(md) {
+      font-size: $font-size-xl;
+    }
+  }
+}
+
+// Heading Text
+.text-heading {
+  line-height: $line-height-tight;
+  font-weight: $font-weight-semibold;
+
+  &.text-heading-1 {
+    @include responsive-font($font-size-5xl, $font-size-4xl, $font-size-3xl);
+  }
+
+  &.text-heading-2 {
+    @include responsive-font($font-size-4xl, $font-size-3xl, $font-size-2xl);
+  }
+
+  &.text-heading-3 {
+    @include responsive-font($font-size-3xl, $font-size-2xl, $font-size-xl);
+  }
+
+  &.text-heading-4 {
+    @include responsive-font($font-size-2xl, $font-size-xl, $font-size-lg);
+  }
+
+  &.text-heading-5 {
+    @include responsive-font($font-size-xl, $font-size-lg, $font-size-base);
+  }
+
+  &.text-heading-6 {
+    @include responsive-font($font-size-lg, $font-size-base, $font-size-sm);
+  }
+}
+
+// ============================================
+// Legacy Font Size Classes (for backward compatibility)
+// ============================================
+
+.fs-2xl {
+  @include responsive-font($font-size-5xl, $font-size-4xl, $font-size-3xl);
+}
+
+.fs-xl {
+  @include responsive-font($font-size-4xl, $font-size-3xl, $font-size-2xl);
+}
+
+.fs-lg {
+  @include responsive-font($font-size-2xl, $font-size-xl, $font-size-lg);
+}
+
+.fs-base {
+  @include responsive-font($font-size-base, $font-size-sm, $font-size-xs);
+}
+
+.fs-sm {
+  @include responsive-font($font-size-sm, $font-size-xs, $font-size-xs);
+}
+
+.fs-xs {
+  @include responsive-font($font-size-xs, $font-size-xs, $font-size-xs);
+}
+
+// ============================================
+// Text Utilities (Component-Specific)
+// ============================================
+
+.text-truncate {
+  @include text-truncate;
+}
+
+.text-clamp-2 {
+  @include text-clamp(2);
+}
+
+.text-clamp-3 {
+  @include text-clamp(3);
+}
+
+.text-clamp-4 {
+  @include text-clamp(4);
+}
+
+.text-clickable {
+  cursor: pointer;
+  user-select: none;
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  &:active {
+    opacity: 0.6;
+  }
+}
+
+// Legacy font styles
+.italic {
+  font-style: italic;
+}
+
+.underline {
+  text-decoration: underline;
+}

@@ -1,9 +1,12 @@
-import React from 'react';
-import { Text } from './Text/Text';
+import { ExtraSmallText, SmallText, BodyText, HeadingText, PageTitleText } from './components';
 
-const App: React.FC = () => (
+const App = () => (
   <div>
-    Welcome <Text fontSize="fs-2xl">Testing text</Text>
+    <ExtraSmallText color="success">Hello World</ExtraSmallText>
+    <SmallText>Hello World</SmallText>
+    <BodyText>Hello World</BodyText>
+    <HeadingText color="error">Hello World</HeadingText>
+    <PageTitleText>Hello World</PageTitleText>
   </div>
 );
 
