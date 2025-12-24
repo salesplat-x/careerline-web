@@ -1,10 +1,6 @@
 @use '../../styles/palette.scss' as *;
 @use '../../styles/mixins.scss' as *;
 
-// ============================================
-// Text Component Styles
-// ============================================
-
 .text-component {
   margin: 0;
   padding: 0;
@@ -13,11 +9,6 @@
   transition: color $transition-fast;
 }
 
-// ============================================
-// Text Variants
-// ============================================
-
-// Small Text
 .text-small {
   font-size: $font-size-xs;
   line-height: $line-height-normal;
@@ -27,7 +18,6 @@
   }
 }
 
-// Body Text
 .text-body {
   line-height: $line-height-normal;
 
@@ -56,7 +46,6 @@
   }
 }
 
-// Heading Text
 .text-heading {
   line-height: $line-height-tight;
   font-weight: $font-weight-semibold;
@@ -86,10 +75,6 @@
   }
 }
 
-// ============================================
-// Legacy Font Size Classes (for backward compatibility)
-// ============================================
-
 .fs-2xl {
   @include responsive-font($font-size-5xl, $font-size-4xl, $font-size-3xl);
 }
@@ -113,10 +98,6 @@
 .fs-xs {
   @include responsive-font($font-size-xs, $font-size-xs, $font-size-xs);
 }
-
-// ============================================
-// Text Utilities (Component-Specific)
-// ============================================
 
 .text-truncate {
   @include text-truncate;
@@ -147,7 +128,6 @@
   }
 }
 
-// Legacy font styles
 .italic {
   font-style: italic;
 }

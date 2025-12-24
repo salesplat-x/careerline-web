@@ -1,12 +1,6 @@
 @use './mixins.scss' as *;
 @use './palette.scss' as *;
 
-// ============================================
-// Utility Classes - Spacing System
-// Base unit: 4px
-// ============================================
-
-// Margin Utilities
 @for $i from 0 through 24 {
   .m-#{$i} {
     margin: #{$i * $spacing-base} !important;
@@ -39,7 +33,6 @@
   }
 }
 
-// Auto margin
 .m-auto {
   margin: auto !important;
 }
@@ -54,7 +47,6 @@
   margin-bottom: auto !important;
 }
 
-// Padding Utilities
 @for $i from 0 through 24 {
   .p-#{$i} {
     padding: #{$i * $spacing-base} !important;
@@ -87,7 +79,6 @@
   }
 }
 
-// Gap Utilities
 @for $i from 0 through 16 {
   .gap-#{$i} {
     gap: #{$i * $spacing-base} !important;
@@ -102,9 +93,6 @@
   }
 }
 
-// ============================================
-// Display Utilities
-// ============================================
 .d-none {
   display: none !important;
 }
@@ -133,11 +121,6 @@
   display: grid !important;
 }
 
-// ============================================
-// Flexbox Utilities
-// ============================================
-
-// Flex Direction
 .flex-row {
   flex-direction: row !important;
 }
@@ -154,7 +137,6 @@
   flex-direction: column-reverse !important;
 }
 
-// Flex Wrap
 .flex-wrap {
   flex-wrap: wrap !important;
 }
@@ -167,7 +149,6 @@
   flex-wrap: wrap-reverse !important;
 }
 
-// Justify Content
 .justify-start {
   justify-content: flex-start !important;
 }
@@ -192,7 +173,6 @@
   justify-content: space-evenly !important;
 }
 
-// Align Items
 .items-start {
   align-items: flex-start !important;
 }
@@ -213,7 +193,6 @@
   align-items: stretch !important;
 }
 
-// Align Self
 .self-auto {
   align-self: auto !important;
 }
@@ -234,9 +213,8 @@
   align-self: stretch !important;
 }
 
-// Flex Grow & Shrink
 .flex-1 {
-  flex: 1 1 0% !important;
+  flex: 1 1 0 !important;
 }
 
 .flex-auto {
@@ -267,9 +245,6 @@
   flex-shrink: 1 !important;
 }
 
-// ============================================
-// Width Utilities
-// ============================================
 .w-auto {
   width: auto !important;
 }
@@ -294,23 +269,18 @@
   width: fit-content !important;
 }
 
-// Percentage widths
 @each $value in (25, 33, 50, 66, 75) {
   .w-#{$value} {
     width: percentage($value / 100) !important;
   }
 }
 
-// Fixed widths (in spacing units)
 @for $i from 0 through 32 {
   .w-#{$i} {
     width: #{$i * $spacing-base} !important;
   }
 }
 
-// ============================================
-// Height Utilities
-// ============================================
 .h-auto {
   height: auto !important;
 }
@@ -335,23 +305,18 @@
   height: fit-content !important;
 }
 
-// Percentage heights
 @each $value in (25, 33, 50, 66, 75) {
   .h-#{$value} {
     height: percentage($value / 100) !important;
   }
 }
 
-// Fixed heights (in spacing units)
 @for $i from 0 through 32 {
   .h-#{$i} {
     height: #{$i * $spacing-base} !important;
   }
 }
 
-// ============================================
-// Text Alignment
-// ============================================
 .text-left {
   text-align: left !important;
 }
@@ -368,9 +333,6 @@
   text-align: justify !important;
 }
 
-// ============================================
-// Text Transform
-// ============================================
 .text-uppercase {
   text-transform: uppercase !important;
 }
@@ -387,9 +349,6 @@
   text-transform: none !important;
 }
 
-// ============================================
-// Font Weight
-// ============================================
 .font-light {
   font-weight: $font-weight-light !important;
 }
@@ -414,9 +373,6 @@
   font-weight: $font-weight-extrabold !important;
 }
 
-// ============================================
-// Font Size
-// ============================================
 .text-xs {
   font-size: $font-size-xs !important;
 }
@@ -453,9 +409,6 @@
   font-size: $font-size-5xl !important;
 }
 
-// ============================================
-// Line Height
-// ============================================
 .leading-tight {
   line-height: $line-height-tight !important;
 }
@@ -468,9 +421,6 @@
   line-height: $line-height-relaxed !important;
 }
 
-// ============================================
-// Text Color
-// ============================================
 .text-primary {
   color: var(--text-primary) !important;
 }
@@ -511,9 +461,6 @@
   color: var(--color-info) !important;
 }
 
-// ============================================
-// Background Color
-// ============================================
 .bg-primary {
   background-color: var(--bg-primary) !important;
 }
@@ -554,9 +501,6 @@
   background-color: var(--color-info) !important;
 }
 
-// ============================================
-// Border Utilities
-// ============================================
 .border {
   border: 1px solid var(--border-light) !important;
 }
@@ -581,7 +525,6 @@
   border-left: 1px solid var(--border-light) !important;
 }
 
-// Border Width
 .border-2 {
   border-width: 2px !important;
 }
@@ -590,7 +533,6 @@
   border-width: 4px !important;
 }
 
-// Border Color
 .border-light {
   border-color: var(--border-light) !important;
 }
@@ -636,9 +578,6 @@
   border-radius: $radius-full !important;
 }
 
-// ============================================
-// Shadow Utilities
-// ============================================
 .shadow-none {
   box-shadow: none !important;
 }
@@ -667,9 +606,6 @@
   box-shadow: $shadow-2xl !important;
 }
 
-// ============================================
-// Position Utilities
-// ============================================
 .position-static {
   position: static !important;
 }
@@ -690,9 +626,6 @@
   position: sticky !important;
 }
 
-// ============================================
-// Overflow Utilities
-// ============================================
 .overflow-auto {
   overflow: auto !important;
 }
@@ -717,9 +650,6 @@
   overflow-y: auto !important;
 }
 
-// ============================================
-// Cursor Utilities
-// ============================================
 .cursor-auto {
   cursor: auto !important;
 }
@@ -736,18 +666,12 @@
   cursor: move !important;
 }
 
-// ============================================
-// Opacity Utilities
-// ============================================
 @for $i from 0 through 10 {
   .opacity-#{$i * 10} {
     opacity: $i / 10 !important;
   }
 }
 
-// ============================================
-// Visibility Utilities
-// ============================================
 .visible {
   visibility: visible !important;
 }
@@ -756,9 +680,6 @@
   visibility: hidden !important;
 }
 
-// ============================================
-// Pointer Events
-// ============================================
 .pointer-events-none {
   pointer-events: none !important;
 }
@@ -767,9 +688,6 @@
   pointer-events: auto !important;
 }
 
-// ============================================
-// User Select
-// ============================================
 .select-none {
   user-select: none !important;
 }
