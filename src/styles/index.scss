@@ -1,0 +1,20 @@
+// ============================================
+// Global SCSS Styles Entry Point
+// ============================================
+// Import order matters - base styles first, then utilities
+
+// 1. Design Tokens
+@forward './palette.scss';
+@forward './mixins.scss';
+
+// 2. Base Styles & Reset
+@forward './base.scss';
+
+// 3. Utility Classes
+@forward './utilities.scss';
+
+// Export everything for use in components
+@use './palette.scss' as *;
+@use './mixins.scss' as *;
+@use './base.scss' as *;
+@use './utilities.scss' as *;
