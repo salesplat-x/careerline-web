@@ -12,7 +12,7 @@ interface ButtonProps {
   className?: string;
 }
 
-const Button = ({
+export const Button = ({
   children,
   variant = 'primary',
   disabled = false,
@@ -40,5 +40,3 @@ const Button = ({
     </button>
   );
 };
-
-export default Button;
