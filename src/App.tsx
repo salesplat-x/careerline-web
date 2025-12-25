@@ -1,12 +1,18 @@
 import { ExtraSmallText, SmallText, BodyText, HeadingText, PageTitleText } from './components';
+import Button from './components/Button/Button.tsx';
 
 const App = () => (
-  <div>
-    <ExtraSmallText color="success">Hello World</ExtraSmallText>
+  <div className="pl-4">
+    <ExtraSmallText>Hello World</ExtraSmallText>
     <SmallText>Hello World</SmallText>
     <BodyText>Hello World</BodyText>
-    <HeadingText color="error">Hello World</HeadingText>
-    <PageTitleText>Hello World</PageTitleText>
+    <HeadingText>Hello World</HeadingText>
+    <PageTitleText onClick={() => console.warn('clicked')}>Hello World</PageTitleText>
+    <div className="w-fit">
+      <Button variant="transparent" border="solid">
+        Hello World
+      </Button>
+    </div>
   </div>
 );
 

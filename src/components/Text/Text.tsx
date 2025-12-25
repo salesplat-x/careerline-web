@@ -1,12 +1,11 @@
 import type { CSSProperties, ReactNode } from 'react';
 import classNames from 'classnames';
-import './Text.scss';
 
 export interface TextProps {
   children: ReactNode;
   className?: string;
   style?: CSSProperties;
-  color?: 'primary' | 'secondary' | 'white';
+  variant?: 'primary' | 'secondary' | 'white';
   weight?: 'light' | 'normal' | 'medium' | 'semibold' | 'bold' | 'extrabold';
   size?: 'xs' | 'sm' | 'base' | 'lg' | 'xl' | '2xl' | '3xl' | '4xl' | '5xl';
   align?: 'left' | 'center' | 'right' | 'justify';
@@ -18,7 +17,7 @@ export const Text = ({
   children,
   className,
   style,
-  color = 'primary',
+  variant = 'primary',
   weight = 'normal',
   size,
   align,
@@ -27,7 +26,7 @@ export const Text = ({
 }: TextProps) => {
   const classes = classNames(
     size && `text-${size}`,
-    color && `text-${color}`,
+    variant && `text-${variant}`,
     weight && `font-${weight}`,
     align && `text-${align}`,
     truncate && 'text-truncate',
@@ -50,9 +49,7 @@ export const SmallText = ({ size = 'sm', ...props }: TextProps) => <Text size={s
 
 export const BodyText = ({ size = 'base', ...props }: TextProps) => <Text size={size} {...props} />;
 
-export const EmphasisText = ({ size = 'lg', ...props }: TextProps) => (
-  <Text size={size} {...props} />
-);
+export const MediumText = ({ size = 'lg', ...props }: TextProps) => <Text size={size} {...props} />;
 
 export const SubheadingText = ({ size = 'xl', ...props }: TextProps) => (
   <Text size={size} {...props} />
