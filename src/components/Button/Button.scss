@@ -1,5 +1,5 @@
-@import '../../styles/palette';
-@import '../../styles/variables';
+@use '../../styles/palette';
+@use '../../styles/variables';
 
 .container {
   display: inline-flex;
@@ -12,8 +12,8 @@
   border-radius: 8px;
   border: none;
   transition: all 0.2s ease-in-out;
-  font-size: $font-size-base;
-  font-weight: $font-weight-medium;
+  font-size: variables.$font-size-base;
+  font-weight: variables.$font-weight-medium;
   position: relative;
 
   &:hover {

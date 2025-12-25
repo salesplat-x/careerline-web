@@ -284,7 +284,7 @@
 
 @each $value in (25, 33, 50, 66, 75) {
   .w-#{$value} {
-    width: percentage($value / 100) !important;
+    width: calc($value * 1%) !important;
   }
 }
 
@@ -320,7 +320,7 @@
 
 @each $value in (25, 33, 50, 66, 75) {
   .h-#{$value} {
-    height: percentage($value / 100) !important;
+    height: calc($value * 1%) !important;
   }
 }
 
@@ -617,7 +617,7 @@
 
 @for $i from 0 through 10 {
   .opacity-#{$i * 10} {
-    opacity: $i / 10 !important;
+    opacity: calc($i / 10) !important;
   }
 }
 
