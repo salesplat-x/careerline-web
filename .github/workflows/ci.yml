@@ -1,10 +1,9 @@
-name: CI
+name: Integration Workflow
 
 on:
   push:
-    branches: [main, master]
+    branches: ['main']
   pull_request:
-    branches: [main, master]
 
 jobs:
   build:
@@ -12,28 +11,29 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [lts/*]
+        node-version: [20.x, 22.x]
 
     steps:
-      - uses: actions/checkout@v4
+      - name: 📦 Checkout repository
+        uses: actions/checkout@v4
 
-      - name: Use Node.js ${{ matrix.node-version }}
+      - name: 🛠️ Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v4
         with:
-          node-version-file: '.nvmrc'
+          node-version: ${{ matrix.node-version }}
           cache: 'npm'
 
-      - name: Install dependencies
-        run: npm ci --legacy-peer-deps
+      - name: 📚 Install dependencies
+        run: npm ci
 
-      - name: Check Formatting (Prettier)
-        run: npm run format:check
-
-      - name: Lint (ESLint)
+      - name: 🕵️ Check for linting issues
         run: npm run lint
 
-      - name: Type Check (TypeScript)
+      - name: 📝 Check for formatting issues
+        run: npm run format:check
+
+      - name: 🧪 Type check
         run: npm run type-check
 
-      - name: Build
+      - name: 🏗️ Build
         run: npm run build
