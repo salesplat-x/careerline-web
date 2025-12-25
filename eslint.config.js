@@ -90,17 +90,6 @@ export default tseslint.config(
       },
     },
     rules: {
-      'no-nested-ternary': 'off',
-      'react/button-has-type': [
-        'error',
-        {
-          button: true,
-          submit: true,
-          reset: true,
-        },
-      ],
-      'react/require-default-props': 'off',
-      'react/prop-types': 'off', //
       // React 17+ doesn't need React in scope
       'react/react-in-jsx-scope': 'off',
 

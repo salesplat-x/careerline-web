@@ -246,6 +246,18 @@
   flex-shrink: 1 !important;
 }
 
+.w-25 {
+  width: 25% !important;
+}
+
+.w-50 {
+  width: 50% !important;
+}
+
+.w-75 {
+  width: 75% !important;
+}
+
 .w-auto {
   width: auto !important;
 }
@@ -625,18 +637,15 @@
   pointer-events: auto !important;
 }
 
-.select-none {
-  user-select: none !important;
-}
+.text-clickable {
+  cursor: pointer;
+  user-select: none;
 
-.select-text {
-  user-select: text !important;
-}
+  &:hover {
+    opacity: 0.8;
+  }
 
-.select-all {
-  user-select: all !important;
-}
-
-.select-auto {
-  user-select: auto !important;
+  &:active {
+    opacity: 0.6;
+  }
 }
