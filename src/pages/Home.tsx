@@ -1,8 +1,7 @@
-import { BodyText, PageTitleText } from '../components';
+import Hero from '../components/Hero/Hero';
 
 export const Home = () => (
   <div>
-    <PageTitleText>Home Page</PageTitleText>
-    <BodyText>This is Home Page Content</BodyText>
+    <Hero />
   </div>
 );

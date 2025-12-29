@@ -19,4 +19,11 @@ $bg-secondary: #fafafa;
   --bg-primary: #{$bg-primary};
   --bg-secondary: #{$bg-secondary};
   --border-color: #{$border-color};
+  --hero-gradient-color: linear-gradient(
+    135deg,
+    rgba(128, 160, 255, 1) 0%,
+    rgba(255, 255, 255, 1) 29%,
+    rgba(246, 248, 255, 1) 63%,
+    rgba(128, 160, 255, 1) 100%
+  );
 }
