@@ -9,6 +9,7 @@ $border-color: #d9d9d9;
 
 $bg-primary: #ffffff;
 $bg-secondary: #fafafa;
+$footer-color: #98a2b3;
 
 :root {
   --button-primary: #{$button-color};
@@ -26,4 +27,5 @@ $bg-secondary: #fafafa;
     rgba(246, 248, 255, 1) 63%,
     rgba(128, 160, 255, 1) 100%
   );
+  --footer-color: #{$footer-color};
 }
