@@ -1,0 +1,100 @@
+@use '../../styles/mixins';
+@use '../../styles/variables.scss' as *;
+
+.hero {
+  height: 100vh;
+  width: 100%;
+  background: #80a0ff33;
+  background: var(--hero-gradient-color);
+  padding-top: 150px;
+
+  .hero-main {
+    @include mixins.flex-center;
+    height: 420px;
+    width: 100%;
+    align-items: start;
+    padding: 50px;
+    gap: 10px;
+    position: relative;
+  }
+
+  .btn-box {
+    width: 100%;
+    @include mixins.flex-between;
+    gap: 25px;
+    margin-top: 60px;
+
+    button {
+      &:nth-child(2) {
+        border-radius: 8px;
+        padding-left: 50px;
+      }
+
+      &:first-child {
+        color: #a6bcff;
+      }
+    }
+
+    img {
+      position: absolute;
+      left: 20px;
+    }
+  }
+
+  .red-span-text {
+    color: var(--text-error);
+    margin-left: 10px;
+  }
+
+  .text-box {
+    height: 100%;
+    word-spacing: 1.5px;
+    letter-spacing: 1.5px;
+    width: 50%;
+
+    div {
+      margin-bottom: 20px;
+    }
+  }
+
+  .line-decor {
+    position: absolute;
+    right: 0;
+    bottom: -100%;
+  }
+
+  .hero-img {
+    height: 100%;
+    width: 50%;
+
+    img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+      border-radius: 20px;
+    }
+  }
+}
+
+@media screen and (max-width: $mobile-breakpoint) {
+  .hero {
+    padding-top: 250px;
+    min-height: 110vh;
+  }
+  .hero-main {
+    flex-direction: column-reverse;
+
+    .text-box,
+    .hero-img {
+      width: 100%;
+    }
+  }
+
+  .btn-box {
+    flex-direction: column;
+    width: 100%;
+    button {
+      width: 100%;
+    }
+  }
+}

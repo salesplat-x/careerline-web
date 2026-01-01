@@ -1,0 +1,37 @@
+@use '../../styles/mixins';
+@use '../../styles/variables.scss' as *;
+
+nav {
+  width: 100%;
+  padding: 0 50px;
+  height: 150px;
+  position: fixed;
+  top: 0;
+  z-index: 100;
+  background-color: transparent;
+  transition:
+    background-color 0.3s ease,
+    box-shadow 0.3s ease;
+
+  @include mixins.flex-between;
+
+  &.scrolled {
+    height: 100px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    background: var(--hero-gradient-color);
+  }
+
+  .logo {
+    img {
+      height: 3.5rem;
+      width: 3.5rem;
+    }
+  }
+
+  button {
+    border-radius: $radius-2xl !important;
+    letter-spacing: 1.5px;
+    padding: 15px 32px !important;
+    font-size: $font-size-sm !important;
+  }
+}

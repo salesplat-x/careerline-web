@@ -1,16 +1,27 @@
-import { Link } from 'react-router-dom';
-import { BodyText, HeadingText } from '../Text';
+import { useEffect, useState } from 'react';
+import { Button } from '../Button';
+import './Navbar.scss';
 
-export const Navbar = () => (
-  <nav>
-    <BodyText>This is navbar</BodyText>
-    <div>
-      <Link to="/">
-        <HeadingText>Home</HeadingText>
-      </Link>
-      <Link to="/question">
-        <HeadingText>Question</HeadingText>
-      </Link>
-    </div>
-  </nav>
-);
+export const Navbar = () => {
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 20); // adjust scroll threshold if needed
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  return (
+    <nav className={scrolled ? 'scrolled' : ''}>
+      <div className="logo">
+        <img src="careerLine.svg" alt="" />
+      </div>
+      <div>
+        <Button variant="primary">Take A Test</Button>
+      </div>
+    </nav>
+  );
+};
