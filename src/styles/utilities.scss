@@ -434,6 +434,10 @@
   color: var(--text-white) !important;
 }
 
+.footer-color {
+  color: var(--footer-color) !important;
+}
+
 .text-error {
   color: var(--text-error) !important;
 }
@@ -648,4 +652,8 @@
   &:active {
     opacity: 0.6;
   }
+}
+
+.text-decoration-none {
+  text-decoration: none;
 }
