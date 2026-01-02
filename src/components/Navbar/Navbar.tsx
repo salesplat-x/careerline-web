@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Button } from '../Button';
+import logo from '../../../public/careerLine.svg';
 import './Navbar.scss';
 
 export const Navbar = () => {
@@ -17,7 +18,7 @@ export const Navbar = () => {
   return (
     <nav className={scrolled ? 'scrolled' : ''}>
       <div className="logo">
-        <img src="careerLine.svg" alt="" />
+        <img src={logo} alt="careerline logo" />
       </div>
       <div>
         <Button variant="primary">Take A Test</Button>
