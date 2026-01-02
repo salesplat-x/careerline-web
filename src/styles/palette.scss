@@ -10,6 +10,7 @@ $border-color: #d9d9d9;
 
 $bg-primary: #ffffff;
 $bg-secondary: #fafafa;
+$card-bg: #f9fafb;
 $footer-color: #98a2b3;
 
 :root {
@@ -22,6 +23,8 @@ $footer-color: #98a2b3;
   --bg-primary: #{$bg-primary};
   --bg-secondary: #{$bg-secondary};
   --border-color: #{$border-color};
+  --card-bg: #{$card-bg};
+  --button-color: #{$button-color};
   --hero-gradient-color: linear-gradient(
     135deg,
     rgba(128, 160, 255, 1) 0%,
