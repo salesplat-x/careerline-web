@@ -6,3 +6,4 @@ export * from './Button';
 export * from './HowItWorks';
 export * from './AboutUs';
 export * from './PageContainer';
+export * from './Target';
