@@ -5,7 +5,7 @@ export interface TextProps {
   children: ReactNode;
   className?: string;
   style?: CSSProperties;
-  variant?: 'primary' | 'secondary' | 'white' | 'error';
+  variant?: 'primary' | 'secondary' | 'white' | 'error' | 'black';
   weight?: 'light' | 'normal' | 'medium' | 'semibold' | 'bold' | 'extrabold';
   size?: 'xs' | 'sm' | 'base' | 'lg' | 'xl' | '2xl' | '3xl' | '4xl' | '5xl';
   align?: 'left' | 'center' | 'right' | 'justify';

@@ -1,7 +1,8 @@
 import { Button } from '../Button';
 import { BodyText, DisplayText } from '../Text';
 import './Hero.scss';
-const Hero = () => (
+
+export const Hero = () => (
   <div className="hero">
     <div className="hero-main">
       <div className="text-box">
@@ -28,5 +29,3 @@ const Hero = () => (
     </div>
   </div>
 );
-
-export default Hero;

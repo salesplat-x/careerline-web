@@ -1,4 +1,6 @@
 export * from './Navbar';
 export * from './Footer';
+export * from './Hero';
 export * from './Text';
 export * from './Button';
+export * from './HowItWorks';
