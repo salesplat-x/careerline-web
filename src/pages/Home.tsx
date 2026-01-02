@@ -1,7 +1,8 @@
-import Hero from '../components/Hero/Hero';
+import { Hero, HowItWorks } from '../components';
 
 export const Home = () => (
-  <div>
+  <>
     <Hero />
-  </div>
+    <HowItWorks />
+  </>
 );

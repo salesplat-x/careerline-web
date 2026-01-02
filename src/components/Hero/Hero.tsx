@@ -1,7 +1,11 @@
 import { Button } from '../Button';
 import { BodyText, DisplayText } from '../Text';
+import whatsapp from '../../../public/whatsapp.svg';
+import heroImg from '../../../public/hero-img.svg';
+import group1 from '../../../public/Group1.svg';
 import './Hero.scss';
-const Hero = () => (
+
+export const Hero = () => (
   <div className="hero">
     <div className="hero-main">
       <div className="text-box">
@@ -16,17 +20,15 @@ const Hero = () => (
         <div className="btn-box">
           <Button>Take Free Test</Button>
           <Button variant="transparent" border="dotted">
-            <img src="whatsapp.svg" alt="whatsapp logo" width="24px" height="24px" /> Take test on
+            <img src={whatsapp} alt="whatsapp logo" width="24px" height="24px" /> Take test on
             WhatsApp
           </Button>
         </div>
       </div>
       <div className="hero-img">
-        <img src="hero-img.jpg" alt="" />
+        <img src={heroImg} alt="group staff picture" />
       </div>
-      <img src="Group1.svg" alt="" className="line-decor" />
+      <img src={group1} alt="group background image" className="line-decor" />
     </div>
   </div>
 );
-
-export default Hero;

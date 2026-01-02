@@ -1,6 +1,7 @@
 import { BodyText, SmallText } from '../Text';
 import './Footer.scss';
 import { Link } from 'react-router-dom';
+import logo from '../../../public/careerLine.svg';
 
 const careerlineLinks = [
   {
@@ -47,7 +48,7 @@ const footerLinks = [
 export const Footer = () => (
   <footer className="footer-container text-white d-flex flex-column justify-center items-center gap-4 px-6 text-center">
     <div className="footer-brand d-flex gap-2 items-center">
-      <img src="/image 3.png" alt="CareerLine logo" />
+      <img src={logo} alt="CareerLine logo" />
       <BodyText className="text-xl font-semibold text-white">CareerLine AI</BodyText>
     </div>
 
