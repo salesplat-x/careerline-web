@@ -4,10 +4,11 @@ import whatsapp from '../../../public/whatsapp.svg';
 import heroImg from '../../../public/hero-img.svg';
 import group1 from '../../../public/Group1.svg';
 import './Hero.scss';
+import { PageContainer } from '../PageContainer';
 
 export const Hero = () => (
   <div className="hero">
-    <div className="hero-main">
+    <PageContainer className="hero-main">
       <div className="text-box">
         <DisplayText weight="bold" variant="secondary">
           Find Your Perfect Career Path in
@@ -29,6 +30,6 @@ export const Hero = () => (
         <img src={heroImg} alt="group staff picture" />
       </div>
       <img src={group1} alt="group background image" className="line-decor" />
-    </div>
+    </PageContainer>
   </div>
 );

@@ -2,6 +2,7 @@ import { BodyText, SmallText } from '../Text';
 import './Footer.scss';
 import { Link } from 'react-router-dom';
 import logo from '../../../public/careerLine.svg';
+import { PageContainer } from '../PageContainer';
 
 const careerlineLinks = [
   {
@@ -46,7 +47,7 @@ const footerLinks = [
 ];
 
 export const Footer = () => (
-  <footer className="footer-container text-white d-flex flex-column justify-center items-center gap-4 px-6 text-center">
+  <PageContainer className="footer-container text-white d-flex flex-column justify-center items-center gap-4 text-center">
     <div className="footer-brand d-flex gap-2 items-center">
       <img src={logo} alt="CareerLine logo" />
       <BodyText className="text-xl font-semibold text-white">CareerLine AI</BodyText>
@@ -74,7 +75,7 @@ export const Footer = () => (
         ))}
       </div>
     </div>
-  </footer>
+  </PageContainer>
 );
 
 export default Footer;
