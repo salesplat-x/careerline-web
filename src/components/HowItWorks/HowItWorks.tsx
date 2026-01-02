@@ -36,7 +36,7 @@ export const HowItWorks = () => {
           How It works
         </HeroText>
         <MediumText weight="medium">
-          Discover your tech or business path in 3 simple ways
+          CareerLine AI, built specifically for your tech transition journey
         </MediumText>
       </div>
       <div

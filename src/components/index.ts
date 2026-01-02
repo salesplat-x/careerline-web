@@ -4,3 +4,4 @@ export * from './Hero';
 export * from './Text';
 export * from './Button';
 export * from './HowItWorks';
+export * from './AboutUs';
