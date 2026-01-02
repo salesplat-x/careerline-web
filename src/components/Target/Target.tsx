@@ -1,5 +1,5 @@
 import { HeroText, MediumText } from '../Text';
-import happyGirl from '../../../public/happy-girl.png';
+import happyGirl from '../../assests/happy-girl.png';
 import styles from './Target.module.scss';
 import { PageContainer } from '../PageContainer';
 

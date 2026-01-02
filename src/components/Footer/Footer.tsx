@@ -1,7 +1,7 @@
 import { BodyText, SmallText } from '../Text';
 import './Footer.scss';
 import { Link } from 'react-router-dom';
-import logo from '../../../public/careerLine.svg';
+import logo from '../../assests/careerLine.svg';
 import { PageContainer } from '../PageContainer';
 
 const careerlineLinks = [
@@ -64,13 +64,13 @@ export const Footer = () => (
     <hr className="hr-divider" />
 
     <div className="footer-bottom w-full mt-4 px-6">
-      <BodyText className="text-sm footer-color">
+      <BodyText className="text-sm text-white">
         © {new Date().getFullYear()} CareerLine. All rights reserved.
       </BodyText>
       <div className="footer-legal d-flex gap-4">
         {footerLinks.map(({ label, href }) => (
           <Link to={href} key={label} className="text-decoration-none">
-            <SmallText className="footer-color">{label}</SmallText>
+            <SmallText className="text-white">{label}</SmallText>
           </Link>
         ))}
       </div>

@@ -1,8 +1,8 @@
 import { Button } from '../Button';
 import { BodyText, DisplayText } from '../Text';
-import whatsapp from '../../../public/whatsapp.svg';
-import heroImg from '../../../public/hero-img.svg';
-import group1 from '../../../public/Group1.svg';
+import whatsapp from '../../assests/whatsapp.svg';
+import heroImg from '../../assests/hero-img.svg';
+import group1 from '../../assests/Group1.svg';
 import './Hero.scss';
 import { PageContainer } from '../PageContainer';
 
