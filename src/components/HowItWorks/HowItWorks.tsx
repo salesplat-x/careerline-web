@@ -4,6 +4,7 @@ import { AiOutlineGlobal } from 'react-icons/ai';
 import { BodyText, HeroText, MediumText, SubheadingText } from '../Text';
 import styles from './HowItWorks.module.scss';
 import cn from 'classnames';
+import { PageContainer } from '../PageContainer';
 
 export const HowItWorks = () => {
   const ICON_SIZE = 40;
@@ -39,11 +40,8 @@ export const HowItWorks = () => {
           CareerLine AI, built specifically for your tech transition journey
         </MediumText>
       </div>
-      <div
-        className={cn(
-          styles.howItWorkContainer,
-          'd-flex gap-12 py-12 px-20 secondary-bg text-white',
-        )}
+      <PageContainer
+        className={cn(styles.howItWorkContainer, 'd-flex gap-12 py-12 secondary-bg text-white')}
       >
         {howItWorks.map(({ icon, step, label, description }) => (
           <div key={step} className="">
@@ -61,7 +59,7 @@ export const HowItWorks = () => {
             </div>
           </div>
         ))}
-      </div>
+      </PageContainer>
     </div>
   );
 };

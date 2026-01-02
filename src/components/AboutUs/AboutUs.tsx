@@ -1,16 +1,17 @@
 import { HeroText, MediumText, SubheadingText } from '../Text';
 import girl from '../../../public/smiling-girl.png';
 import styles from './AboutUs.module.scss';
+import { PageContainer } from '../PageContainer';
 
 export const AboutUs = () => (
-  <div>
+  <PageContainer>
     <div className="text-center py-13">
       <HeroText variant="black" weight="bold">
         About US
       </HeroText>
       <MediumText weight="medium">Discover your tech or business path in 3 simple ways</MediumText>
     </div>
-    <div className="py-12 px-20">
+    <div className="py-12">
       <div className={styles.content}>
         <div className="d-flex flex-column gap-6">
           <SubheadingText weight="medium">Who Are We?</SubheadingText>
@@ -32,5 +33,5 @@ export const AboutUs = () => (
         <img src={girl} alt="smiling girl" className={styles.image} />
       </div>
     </div>
-  </div>
+  </PageContainer>
 );
