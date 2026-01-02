@@ -37,7 +37,7 @@
 }
 
 .secondary {
-  background-color: var(--text-secondary);
+  background-color: var(--button-secondary);
   color: var(--text-white);
 }
 
@@ -63,6 +63,7 @@
   0% {
     transform: rotate(0deg);
   }
+
   100% {
     transform: rotate(360deg);
   }
