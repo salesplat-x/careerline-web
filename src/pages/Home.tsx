@@ -1,4 +1,4 @@
-import { AboutUs, Hero, HowItWorks, Target, WhyChooseUs } from '../components';
+import { AboutUs, CallToAction, Hero, HowItWorks, Target, WhyChooseUs } from '../components';
 
 export const Home = () => (
   <>
@@ -7,5 +7,6 @@ export const Home = () => (
     <AboutUs />
     <Target />
     <WhyChooseUs />
+    <CallToAction />
   </>
 );

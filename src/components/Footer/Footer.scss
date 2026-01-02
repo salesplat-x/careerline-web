@@ -47,3 +47,15 @@
     flex-wrap: wrap;
   }
 }
+
+.cta {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  padding: 42px;
+  margin: 32px;
+  border-radius: 16px;
+  background-color: var(--footer-color);
+}
