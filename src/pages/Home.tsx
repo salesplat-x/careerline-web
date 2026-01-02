@@ -1,9 +1,10 @@
-import { AboutUs, Hero, HowItWorks } from '../components';
+import { AboutUs, Hero, HowItWorks, Target } from '../components';
 
 export const Home = () => (
   <>
     <Hero />
     <HowItWorks />
     <AboutUs />
+    <Target />
   </>
 );
