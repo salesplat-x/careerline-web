@@ -1,5 +1,5 @@
 import { HeroText, MediumText, SubheadingText } from '../Text';
-import girl from '../../../public/smiling-girl.png';
+import girl from '../../assests/smiling-girl.png';
 import styles from './AboutUs.module.scss';
 import { PageContainer } from '../PageContainer';
 
