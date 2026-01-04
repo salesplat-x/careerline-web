@@ -1,0 +1,99 @@
+@use '../../styles/variables.scss' as *;
+
+.contact-container {
+  min-height: 100vh;
+  background-color: #3d6efc;
+}
+
+.contactMain-container {
+  padding-top: 120px;
+
+  .contact-main {
+    width: 100%;
+    height: 100%;
+    padding: 0 28px;
+    gap: 20px;
+
+    .card-box,
+    .form-main {
+      flex: 1;
+      margin-bottom: 100px;
+    }
+
+    .form-main {
+      padding: 10px;
+    }
+  }
+  .card-box {
+    height: 396px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 35px;
+  }
+
+  .contact-card {
+    color: #ffff;
+    width: 230px;
+
+    button {
+      background: none;
+      border: none;
+      color: #ffff;
+      font-size: 14px;
+      font-weight: 500;
+      cursor: pointer;
+      text-align: start;
+      line-height: 26px;
+    }
+
+    .card-desc {
+      color: #e9d7fe !important;
+      margin-bottom: 15px;
+    }
+  }
+
+  .text-box {
+    div {
+      margin-bottom: 15px;
+    }
+  }
+  .card-icon {
+    margin-bottom: 12px;
+  }
+}
+
+.head-text-box {
+  padding: 0 28px;
+  .main-text {
+    color: #e9d7fe !important;
+    font-weight: 600;
+    margin-bottom: 16px;
+  }
+}
+
+@media screen and (max-width: $small-breakpoint) {
+  .contactMain-container {
+    .contact-main {
+      flex-direction: column;
+      flex-wrap: nowrap;
+      padding: 0;
+
+      .card-box {
+        min-height: 396px;
+        width: 100%;
+        gap: 20px;
+      }
+
+      .form-main {
+        width: 100%;
+        padding: 0;
+      }
+    }
+  }
+
+  .head-text-box {
+    padding: 0;
+  }
+}
