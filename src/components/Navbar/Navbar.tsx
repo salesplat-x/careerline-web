@@ -1,5 +1,5 @@
 import { Button } from '../Button';
-import logo from '../../../public/careerLine.svg';
+import logo from '../../assests/careerLine.svg';
 import './Navbar.scss';
 import { useTheme } from '../../hooks/useTheme';
 import { MdLightMode, MdDarkMode } from 'react-icons/md';
