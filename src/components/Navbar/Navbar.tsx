@@ -4,8 +4,13 @@ import './Navbar.scss';
 import { useTheme } from '../../hooks/useTheme';
 import { MdLightMode, MdDarkMode } from 'react-icons/md';
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
-export const Navbar = () => {
+interface NavbarProps {
+  navTextColor: string;
+}
+
+export const Navbar = ({ navTextColor }: NavbarProps) => {
   const [scrolled, setScrolled] = useState(false);
   const { theme, setTheme } = useTheme();
 
@@ -30,9 +35,13 @@ export const Navbar = () => {
   return (
     <nav className={scrolled ? 'scrolled' : ''}>
       <div className="logo">
-        <img src={logo} alt="careerline logo" />
+        <a href="/">
+          <img src={logo} alt="careerline logo" />
+        </a>
       </div>
-      <div className="nav-actions">
+      <div className="nav-actions" style={{ color: navTextColor }}>
+        <Link to="/">Home</Link>
+        <Link to="/contact us">Contact</Link>
         <Button variant="primary">Take A Test</Button>
         <button className="theme-toggle" onClick={toggleTheme} aria-label="Toggle theme">
           {getIcon()}

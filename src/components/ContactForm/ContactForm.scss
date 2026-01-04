@@ -1,0 +1,129 @@
+@use '../../styles/variables.scss' as *;
+
+.contact-form {
+  width: 100%;
+  form {
+    max-width: 100%;
+    background: #ffffff;
+    padding: 40px 32px;
+    border-radius: 10px;
+  }
+
+  .row {
+    display: flex;
+    gap: 16px;
+
+    .field {
+      flex: 1;
+    }
+  }
+
+  .field {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 16px;
+
+    label {
+      font-size: 14px;
+      font-weight: 500;
+      margin-bottom: 6px;
+      color: #092772;
+    }
+
+    input,
+    textarea {
+      padding: 10px 12px;
+      border-radius: 8px;
+      border: 1px solid #d1d5db;
+      font-size: 14px;
+      outline: none;
+      transition: border-color 0.2s;
+
+      &::placeholder {
+        color: #09277280;
+      }
+
+      &:focus {
+        border-color: #2563eb;
+      }
+    }
+
+    textarea {
+      resize: none;
+    }
+  }
+
+  .checkbox {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    margin: 16px 0;
+
+    input {
+      margin-top: 4px;
+    }
+
+    label {
+      font-size: 13px;
+      color: #4b5563;
+
+      a {
+        color: #2563eb;
+        text-decoration: underline;
+      }
+    }
+  }
+
+  button {
+    width: 100%;
+    background: #0b3cff;
+    color: #ffffff;
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 500;
+    border: none;
+    cursor: pointer;
+    transition: background 0.2s;
+
+    &:hover {
+      background: #062fcf;
+    }
+  }
+}
+
+.field {
+  position: relative;
+
+  &.error input,
+  &.error textarea {
+    border-color: #e74c3c;
+  }
+}
+
+.error-message {
+  color: #e74c3c;
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+  display: block;
+}
+
+.checkbox-error {
+  margin-left: 1.5rem;
+  margin-top: 0.5rem;
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+@media screen and (max-width: $small-breakpoint) {
+  .row {
+    flex-direction: column;
+  }
+
+  .contact-form {
+    width: 100%;
+  }
+}

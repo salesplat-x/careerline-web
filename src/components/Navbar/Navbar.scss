@@ -22,6 +22,10 @@ nav {
   &.scrolled {
     box-shadow: rgba(17, 17, 26, 0.1) 0 1px 0;
     background: var(--hero-gradient-color);
+
+    a {
+      color: black;
+    }
   }
 
   .logo {
@@ -64,5 +68,11 @@ nav {
       padding: 15px 32px !important;
       font-size: $font-size-sm !important;
     }
+  }
+
+  a {
+    text-decoration: none;
+    color: inherit;
+    padding: 0 16px;
   }
 }

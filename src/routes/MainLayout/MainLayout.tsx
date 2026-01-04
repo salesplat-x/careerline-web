@@ -1,9 +1,13 @@
 import { Outlet } from 'react-router-dom';
 import { Footer, Navbar } from '../../components';
 
-export const MainLayout = () => (
+interface NavbarProps {
+  navTextColor: string;
+}
+
+export const MainLayout = ({ navTextColor }: NavbarProps) => (
   <div>
-    <Navbar />
+    <Navbar navTextColor={navTextColor} />
     <main>
       <Outlet />
     </main>
