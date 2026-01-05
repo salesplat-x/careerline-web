@@ -669,3 +669,7 @@
 .secondary-bg {
   background-color: var(--button-secondary);
 }
+
+.transition {
+  transition: width 0.3s ease-in-out;
+}

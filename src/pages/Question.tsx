@@ -1,8 +1,23 @@
-import { PageTitleText, BodyText } from '../components/Text';
+import { useState } from 'react';
+import { QuestionFlow, Loading, Recommendation } from '../components';
 
-export const Question = () => (
-  <div>
-    <PageTitleText>Question Page</PageTitleText>
-    <BodyText className="mt-4">This is Question Page Content</BodyText>
-  </div>
-);
+type QuestionPageState = 'question' | 'loading' | 'recommendation';
+
+export const Question = () => {
+  const [state, setState] = useState<QuestionPageState>('question');
+
+  const handleQuestionComplete = () => {
+    setState('loading');
+    setTimeout(() => {
+      setState('recommendation');
+    }, 4000);
+  };
+
+  return (
+    <>
+      {state === 'question' && <QuestionFlow onComplete={handleQuestionComplete} />}
+      {state === 'loading' && <Loading />}
+      {state === 'recommendation' && <Recommendation />}
+    </>
+  );
+};
