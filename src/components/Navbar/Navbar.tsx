@@ -4,8 +4,10 @@ import './Navbar.scss';
 import { useTheme } from '../../hooks/useTheme';
 import { MdLightMode, MdDarkMode } from 'react-icons/md';
 import { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 export const Navbar = () => {
+  const navigate = useNavigate();
   const [scrolled, setScrolled] = useState(false);
   const { theme, setTheme } = useTheme();
 
@@ -33,7 +35,9 @@ export const Navbar = () => {
         <img src={logo} alt="careerline logo" />
       </div>
       <div className="nav-actions">
-        <Button variant="primary">Take A Test</Button>
+        <Button variant="primary" onClick={() => navigate('/question')}>
+          Take A Test
+        </Button>
         <button className="theme-toggle" onClick={toggleTheme} aria-label="Toggle theme">
           {getIcon()}
         </button>
