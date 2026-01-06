@@ -37,6 +37,8 @@ $footer-color: #d3dffe;
   --footer-bg: #{$text-secondary};
   --footer-text: #{$text-white};
   --button-secondary: #{$text-secondary};
+  --contact-page-bg: #3d6efc;
+  --contact-secondary-color: #e9d7fe;
 }
 
 [data-theme='dark'] {
@@ -65,4 +67,5 @@ $footer-color: #d3dffe;
   --footer-bg: #020617;
   --footer-text: #f8fafc;
   --button-secondary: #334155;
+  --contact-page-bg: rgba(15, 23, 42, 1);
 }

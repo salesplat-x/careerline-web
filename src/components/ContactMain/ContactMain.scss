@@ -1,36 +1,22 @@
 @use '../../styles/variables.scss' as *;
+@use '../../styles/palette.scss' as *;
 
 .contact-container {
   min-height: 100vh;
-  background-color: #3d6efc;
+  background-color: var(--contact-page-bg);
 }
 
 .contactMain-container {
-  padding-top: 120px;
-
   .contact-main {
-    width: 100%;
-    height: 100%;
     padding: 0 28px;
-    gap: 20px;
-
     .card-box,
     .form-main {
       flex: 1;
       margin-bottom: 100px;
     }
-
-    .form-main {
-      padding: 10px;
-    }
   }
   .card-box {
     height: 396px;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: flex-start;
-    justify-content: flex-start;
-    gap: 35px;
   }
 
   .contact-card {
@@ -40,17 +26,14 @@
     button {
       background: none;
       border: none;
-      color: #ffff;
+      color: $text-white;
       font-size: 14px;
       font-weight: 500;
-      cursor: pointer;
-      text-align: start;
       line-height: 26px;
     }
 
     .card-desc {
-      color: #e9d7fe !important;
-      margin-bottom: 15px;
+      color: var(--contact-secondary-color) !important;
     }
   }
 
@@ -59,24 +42,19 @@
       margin-bottom: 15px;
     }
   }
-  .card-icon {
-    margin-bottom: 12px;
-  }
 }
 
 .head-text-box {
   padding: 0 28px;
   .main-text {
-    color: #e9d7fe !important;
-    font-weight: 600;
-    margin-bottom: 16px;
+    color: var(--contact-secondary-color) !important;
   }
 }
 
-@media screen and (max-width: $small-breakpoint) {
+@media screen and (max-width: 1024px) {
   .contactMain-container {
     .contact-main {
-      flex-direction: column;
+      flex-direction: column-reverse;
       flex-wrap: nowrap;
       padding: 0;
 

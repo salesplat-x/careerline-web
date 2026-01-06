@@ -8,3 +8,4 @@ export * from './AboutUs';
 export * from './PageContainer';
 export * from './Target';
 export * from './WhyChooseUs';
+export * from './QuestionFlow';

@@ -6,6 +6,7 @@ import { IoChatbubbleOutline } from 'react-icons/io5';
 import { HiOutlineLocationMarker } from 'react-icons/hi';
 import { LuPhone } from 'react-icons/lu';
 import './ContactMain.scss';
+import '../../styles/utilities.scss';
 export const ContactMain = () => {
   const cardItems = [
     {
@@ -35,33 +36,33 @@ export const ContactMain = () => {
   ];
 
   return (
-    <PageContainer className="contactMain-container ">
+    <PageContainer className="contactMain-container pt-30">
       <div className="head-text-box pb-16">
-        <SubheadingText weight="semibold" className="main-text">
+        <SubheadingText weight="semibold" className="main-text font-semibold mb-4">
           Contact us
         </SubheadingText>
         <BodyText variant="white" weight="light">
           We’d love to hear from you. Please fill out this form or send us an email.
         </BodyText>
       </div>
-      <div className="contact-main  d-flex">
-        <div className="card-box">
+      <div className="contact-main  d-flex w-full h-full gap-3">
+        <div className="card-box d-flex flex-wrap items-start justify-start gap-9">
           {cardItems.map((card, i) => (
             <div className="contact-card" key={i}>
-              <div className="card-icon">{card.icon}</div>
+              <div className="card-icon mb-3">{card.icon}</div>
               <div className="text-box">
                 <MediumText variant="white" weight="medium">
                   {card.label}
                 </MediumText>
-                <SmallText className="card-desc" weight="normal">
+                <SmallText className="card-desc mb-4" weight="normal">
                   {card.description}
                 </SmallText>
-                <button>{card.buttonText}</button>
+                <button className="text-left cursor-pointer">{card.buttonText}</button>
               </div>
             </div>
           ))}
         </div>
-        <div className="form-main">
+        <div className="form-main ">
           <ContactForm />
         </div>
       </div>

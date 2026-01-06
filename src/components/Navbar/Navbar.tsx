@@ -5,12 +5,10 @@ import { useTheme } from '../../hooks/useTheme';
 import { MdLightMode, MdDarkMode } from 'react-icons/md';
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
-interface NavbarProps {
-  navTextColor: string;
-}
-
-export const Navbar = ({ navTextColor }: NavbarProps) => {
+export const Navbar = () => {
+  const navigate = useNavigate();
   const [scrolled, setScrolled] = useState(false);
   const { theme, setTheme } = useTheme();
 
@@ -39,10 +37,11 @@ export const Navbar = ({ navTextColor }: NavbarProps) => {
           <img src={logo} alt="careerline logo" />
         </a>
       </div>
-      <div className="nav-actions" style={{ color: navTextColor }}>
-        <Link to="/">Home</Link>
+      <div className="nav-actions">
         <Link to="/contact us">Contact</Link>
-        <Button variant="primary">Take A Test</Button>
+        <Button variant="primary" onClick={() => navigate('/question')}>
+          Take A Test
+        </Button>
         <button className="theme-toggle" onClick={toggleTheme} aria-label="Toggle theme">
           {getIcon()}
         </button>

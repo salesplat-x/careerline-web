@@ -6,7 +6,7 @@ import { Contact } from '../pages/Contact.tsx';
 
 export const getRoutes = (): RouteObject[] => [
   {
-    element: <MainLayout navTextColor="black" />,
+    element: <MainLayout />,
     children: [
       {
         path: '/',
@@ -24,7 +24,7 @@ export const getRoutes = (): RouteObject[] => [
     ],
   },
   {
-    element: <MainLayout navTextColor="white" />,
+    element: <MainLayout />,
     children: [
       {
         path: '/contact us',
