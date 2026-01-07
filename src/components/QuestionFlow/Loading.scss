@@ -1,10 +1,17 @@
+@use '../../styles/mixins' as *;
+
 .loading {
   min-height: 100vh;
   padding: 24px;
   background-color: var(--bg-primary);
 
+  @include mobile-only {
+    padding: 16px;
+  }
+
   &__container {
     max-width: 600px;
+    padding: 0 16px;
   }
 
   &__spinner-wrapper {
@@ -23,6 +30,11 @@
     border: 4px dashed var(--button-primary);
     border-radius: 50%;
     animation: spin 2s linear infinite;
+
+    @include mobile-only {
+      width: 60px;
+      height: 60px;
+    }
   }
 
   &__button {

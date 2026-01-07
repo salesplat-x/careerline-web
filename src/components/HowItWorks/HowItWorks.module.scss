@@ -2,8 +2,7 @@
 
 .howItWorkContainer {
   @media screen and (max-width: $small-breakpoint) {
-    display: none;
     flex-direction: column;
-    gap: 48px;
+    gap: 32px;
   }
 }

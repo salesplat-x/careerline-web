@@ -28,3 +28,15 @@
   display: flex;
   flex-direction: column;
 }
+
+@mixin mobile-only {
+  @media screen and (max-width: $small-breakpoint) {
+    @content;
+  }
+}
+
+@mixin desktop-only {
+  @media screen and (min-width: #{$small-breakpoint + 1}) {
+    @content;
+  }
+}

@@ -45,7 +45,7 @@ export const WhyChooseUs = () => {
       </div>
       <div className={styles.grid}>
         {items.map(({ icon, label, description }) => (
-          <div className={styles.card}>
+          <div key={label} className={styles.card}>
             {icon}
             <SubheadingText weight="medium" variant="secondary" className="mb-2">
               {label}
