@@ -15,6 +15,7 @@ $footer-color: #d3dffe;
 
 :root {
   --button-primary: #{$button-color};
+  --button-secondary: #062fcf;
   --text-error: #{$color-error};
   --text-primary: #{$text-primary};
   --text-secondary: #{$text-secondary};
@@ -39,6 +40,7 @@ $footer-color: #d3dffe;
   --button-secondary: #{$text-secondary};
   --contact-page-bg: #3d6efc;
   --contact-secondary-color: #e9d7fe;
+  --contact-form-text: #092772;
 }
 
 [data-theme='dark'] {

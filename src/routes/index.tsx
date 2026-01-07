@@ -12,6 +12,10 @@ export const getRoutes = (): RouteObject[] => [
         path: '/',
         element: <Home />,
       },
+      {
+        path: '/contact us',
+        element: <Contact />,
+      },
     ],
   },
   {
@@ -20,15 +24,6 @@ export const getRoutes = (): RouteObject[] => [
       {
         path: '/question',
         element: <Question />,
-      },
-    ],
-  },
-  {
-    element: <MainLayout />,
-    children: [
-      {
-        path: '/contact us',
-        element: <Contact />,
       },
     ],
   },

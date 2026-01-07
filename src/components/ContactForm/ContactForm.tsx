@@ -1,9 +1,9 @@
 import './ContactForm.scss';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
+import '../../styles/utilities.scss';
 import * as z from 'zod';
 
-// Define the validation schema with Zod
 const contactFormSchema = z.object({
   firstName: z.string().min(1, 'First name is required'),
   lastName: z.string().min(1, 'Last name is required'),
@@ -33,14 +33,9 @@ const ContactForm = () => {
     },
   });
 
-  const onSubmit = async (data: ContactFormData) => {
-    // Simulate API call
-    console.log('Form submitted:', data);
-
-    await new Promise((resolve) => setTimeout(resolve, 1000)); // fake delay
-
+  const onSubmit = () => {
     alert('Message sent successfully!');
-    reset(); // Reset form after successful submission
+    reset();
   };
 
   return (
@@ -95,7 +90,7 @@ const ContactForm = () => {
           {errors.message && <span className="error-message">{errors.message.message}</span>}
         </div>
 
-        <div className="checkbox">
+        <div className="checkbox d-flex items-start gap-2 my-4">
           <input id="privacy" type="checkbox" {...register('privacy')} />
           <label htmlFor="privacy">
             You agree to our <a href="#">friendly privacy policy</a>.
@@ -105,7 +100,11 @@ const ContactForm = () => {
           <span className="error-message checkbox-error">{errors.privacy.message}</span>
         )}
 
-        <button type="submit" disabled={isSubmitting}>
+        <button
+          type="submit"
+          disabled={isSubmitting}
+          className="p-3 rounded-lg font-medium cursor-pointer border-0"
+        >
           {isSubmitting ? 'Sending...' : 'Send message'}
         </button>
       </form>

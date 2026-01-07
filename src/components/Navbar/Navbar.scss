@@ -12,20 +12,13 @@ nav {
   transition:
     background-color 0.3s ease,
     box-shadow 0.3s ease;
+  box-shadow: rgba(17, 17, 26, 0.1) 0 1px 0;
+  background: var(--hero-gradient-color);
 
   @include mixins.flex-between;
 
   @media screen and (max-width: $small-breakpoint) {
     padding: 0 16px;
-  }
-
-  &.scrolled {
-    box-shadow: rgba(17, 17, 26, 0.1) 0 1px 0;
-    background: var(--hero-gradient-color);
-
-    a {
-      color: black;
-    }
   }
 
   .logo {
