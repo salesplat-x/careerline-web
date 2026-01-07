@@ -5,10 +5,6 @@
   background-color: var(--footer-bg);
   color: var(--footer-text);
   height: 334px;
-
-  @media (max-width: $mobile-breakpoint) {
-    height: auto;
-  }
 }
 
 .footer-brand img {

@@ -48,7 +48,7 @@
   margin-bottom: auto !important;
 }
 
-@for $i from 0 through 24 {
+@for $i from 0 through 32 {
   .p-#{$i} {
     padding: #{$i * $spacing-base} !important;
   }

@@ -4,6 +4,7 @@ import './Navbar.scss';
 import { useTheme } from '../../hooks/useTheme';
 import { MdLightMode, MdDarkMode } from 'react-icons/md';
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 
 export const Navbar = () => {
@@ -32,9 +33,12 @@ export const Navbar = () => {
   return (
     <nav className={scrolled ? 'scrolled' : ''}>
       <div className="logo">
-        <img src={logo} alt="careerline logo" />
+        <a href="/">
+          <img src={logo} alt="careerline logo" />
+        </a>
       </div>
       <div className="nav-actions">
+        <Link to="/contact us">Contact</Link>
         <Button variant="primary" onClick={() => navigate('/question')}>
           Take A Test
         </Button>
