@@ -3,13 +3,13 @@ import logo from '../../assests/careerLine.svg';
 import './Navbar.scss';
 import { useTheme } from '../../hooks/useTheme';
 import { MdLightMode, MdDarkMode } from 'react-icons/md';
-import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import { useNavigate } from 'react-router-dom';
+import { useState, useEffect, useCallback } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 
 export const Navbar = () => {
   const navigate = useNavigate();
   const [scrolled, setScrolled] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
   const { theme, setTheme } = useTheme();
 
   useEffect(() => {
@@ -21,9 +21,36 @@ export const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  useEffect(() => {
+    if (menuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [menuOpen]);
+
   const toggleTheme = () => {
     setTheme(theme === 'light' ? 'dark' : 'light');
   };
+
+  const toggleMenu = useCallback(() => {
+    setMenuOpen((prev) => !prev);
+  }, []);
+
+  const closeMenu = useCallback(() => {
+    setMenuOpen(false);
+  }, []);
+
+  const handleNavigation = useCallback(
+    (path: string) => {
+      navigate(path);
+      closeMenu();
+    },
+    [navigate, closeMenu],
+  );
 
   const getIcon = () => {
     if (theme === 'light') return <MdLightMode size={24} />;
@@ -31,21 +58,56 @@ export const Navbar = () => {
   };
 
   return (
-    <nav className={scrolled ? 'scrolled' : ''}>
-      <div className="logo">
-        <a href="/">
-          <img src={logo} alt="careerline logo" />
-        </a>
+    <>
+      <nav className={scrolled ? 'scrolled' : ''}>
+        <div className="logo">
+          <a href="/">
+            <img src={logo} alt="careerline logo" />
+          </a>
+        </div>
+
+        <div className="nav-actions desktop-nav">
+          <Link to="/contact us">Contact</Link>
+          <Button variant="primary" onClick={() => navigate('/question')}>
+            Take A Test
+          </Button>
+          <button className="theme-toggle" onClick={toggleTheme} aria-label="Toggle theme">
+            {getIcon()}
+          </button>
+        </div>
+
+        <div className="mobile-nav-controls">
+          <button className="theme-toggle" onClick={toggleTheme} aria-label="Toggle theme">
+            {getIcon()}
+          </button>
+          <button
+            className={`hamburger ${menuOpen ? 'active' : ''}`}
+            onClick={toggleMenu}
+            aria-label="Toggle menu"
+            aria-expanded={menuOpen}
+          >
+            <span className="hamburger-line" />
+            <span className="hamburger-line" />
+            <span className="hamburger-line" />
+          </button>
+        </div>
+      </nav>
+
+      <div className={`mobile-menu-overlay ${menuOpen ? 'active' : ''}`} onClick={closeMenu} />
+
+      <div className={`mobile-menu ${menuOpen ? 'active' : ''}`}>
+        <div className="mobile-menu-content">
+          <Link to="/contact us" className="mobile-nav-link" onClick={closeMenu}>
+            Contact
+          </Link>
+          <div className="mobile-menu-divider" />
+          <div className="mobile-menu-cta">
+            <Button variant="primary" onClick={() => handleNavigation('/question')}>
+              Take A Test
+            </Button>
+          </div>
+        </div>
       </div>
-      <div className="nav-actions">
-        <Link to="/contact us">Contact</Link>
-        <Button variant="primary" onClick={() => navigate('/question')}>
-          Take A Test
-        </Button>
-        <button className="theme-toggle" onClick={toggleTheme} aria-label="Toggle theme">
-          {getIcon()}
-        </button>
-      </div>
-    </nav>
+    </>
   );
 };
